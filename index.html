@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="card_style.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -18,7 +18,7 @@
     <header id="hdr">
         <nav class=" navbg navbar navbar-expand-lg navbar-dark text-light">
             <div class=" bar container-fluid text-light me-5" id="nav_con">
-              <a class="navbar-brand justify-content-start me-5" href="index.html">
+              <a class="navbar-brand justify-content-start me-5 d-none d-md-flex" href="index.html" id="hdr_logo">
                 <img src="header_logo.png" width="200" height="100" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,21 +33,21 @@
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <h4>News</h4>
                       </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <ul class="dropdown-menu" style="background-color:black" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item text-danger" href="#">Action</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Another action</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Something else here</a></li>
                       </ul>
                     </li>
                   <a class="nav-link" href="#about"><h4>About-Us</h4></a>
-                  <a class="nav-link" href="#"><h4>Videos</h4></a>
+                  <a class="nav-link" href="#video"><h4>Videos</h4></a>
                 </div>
                 <div class="navbar-nav justify-content-end p-3">
-                  <a class="nav-link" href="#"><h4><ion-icon name="logo-instagram"></h4></ion-icon></a>
-                  <a class="nav-link" href="#"><h4><ion-icon name="logo-youtube"></h4></ion-icon></a>
-                  <a class="nav-link" href="#"><h4><ion-icon name="mail-outline"></h4></ion-icon></a>
-                  <a class="nav-link" href="#"><h4><ion-icon name="logo-facebook"></h4></ion-icon></a>
-              </div>
+                  <a class="nav-link" style="width: 40px; height:48px;" href="#"><h4><ion-icon name="logo-instagram"></h4></ion-icon></a>
+                  <a class="nav-link" style="width: 40px; height:48px;" href="#"><h4><ion-icon name="logo-youtube"></h4></ion-icon></a>
+                  <a class="nav-link" style="width: 40px; height:48px;" href="#"><h4><ion-icon name="mail-outline"></h4></ion-icon></a>
+                  <a class="nav-link" style="width: 40px; height:48px;" href="#"><h4><ion-icon name="logo-facebook"></h4></ion-icon></a>
+                </div>
               </div>
             </div>
           </nav>
@@ -55,7 +55,7 @@
 
 
     <!--Main image and intro text-->
-    <section id="intro" class="masthead" style="background-color:black;height: 85vh;">
+    <section id="intro" class="masthead">
       <div class="container-fluid text-light" id="intro_con" >
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-5 text-center text-md-start " id="main_text">
@@ -75,70 +75,120 @@
     </div>
     </section>
     
+    <!--linear gradient colour-->
+    <section class="lg_up_events">
+    </section>
 
     <!--Upcoming Events-->
-    <section  class="bg light pt-5" id="events">
+    <section  class="bg light pt-5" style="box-sizing:border-box" id="events">
       <div class="continer-fluid">
           <h3 class="text-center"><ion-icon class="reveal fade-bottom"name="radio-outline"></ion-icon>
             <p class="reveal fade-bottom2">Upcoming Events</p>
           </h3>
-          <div class="row justify-content-center align-items-center my-5 mx-0" id="event_row">
-            <div class="col-8 col-lg-3 col-xl-3 reveal fade-bottom3 g-0">
-              <div class="card text-white bg-transparent mb-3" style="height:25rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body text-center py-4">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+
+          <div class="wrapper reveal fade-right sm-p-5" id="card_wrapper">
+            <ul class="stage">
+              <li class="scene" id="card1">
+                <div class="movie">
+                  <div class="poster" id="poster1"></div>
+                  <div class="info">
+                    <header>
+                      <h1>It's a Wonderful Life</h1>
+                      <span class="year">1946</span>
+                      <span class="rating">PG</span>
+                      <span class="duration">130 minutes</span>
+                    </header>
+                    <p>
+                      In Bedford Falls, New York on Christmas Eve, George Bailey is deeply troubled. Prayers for his well-being from friends and family reach Heaven. Clarence Odbody, Angel Second Class, is assigned to visit Earth to save George, thereby earning his wings. Franklin and Joseph, the head angels, review George's life with Clarence.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-8 col-lg-4 reveal fade-bottom2 g-0">
-              <div class="card justify-content-center border-danger border-2 text-white bg-transparent mb-3" style="height:25rem;" >
-                <div class="card-header">Most Recent</div>
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body text-center py-4">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+              </li>
+              <li class="scene" id="card2">
+                <div class="movie">
+                  <div class="poster"></div>
+                  <div class="info">
+                    <header>
+                      <h1>It's a Wonderful Life</h1>
+                      <span class="year">1946</span>
+                      <span class="rating">PG</span>
+                      <span class="duration">130 minutes</span>
+                    </header>
+                    <p>
+                      In Bedford Falls, New York on Christmas Eve, George Bailey is deeply troubled. Prayers for his well-being from friends and family reach Heaven. Clarence Odbody, Angel Second Class, is assigned to visit Earth to save George, thereby earning his wings. Franklin and Joseph, the head angels, review George's life with Clarence.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-8 col-lg-3 col-xl-3 reveal fade-bottom3 g-0">
-              <div class="card justify-content-center text-white bg-transparent mb-3" style="height:25rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body text-center py-4">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+              </li>
+              <li class="scene" id="card3">
+                <div class="movie">
+                  <div class="poster"></div>
+                  <div class="info">
+                    <header>
+                      <h1>It's a Wonderful Life</h1>
+                      <span class="year">1946</span>
+                      <span class="rating">PG</span>
+                      <span class="duration">130 minutes</span>
+                    </header>
+                    <p>
+                      In Bedford Falls, New York on Christmas Eve, George Bailey is deeply troubled. Prayers for his well-being from friends and family reach Heaven. Clarence Odbody, Angel Second Class, is assigned to visit Earth to save George, thereby earning his wings. Franklin and Joseph, the head angels, review George's life with Clarence.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul> 
           </div>
+          <div class="reveal fade-right" ><center><a id="mob_card" href="#" ><ion-icon name="clipboard"></ion-icon></a></center></div>
           <!--Extra section added to include the my-5 of the row-->
           <div class="extra_event" style="height: 5px;"></div>
       </div>
     </section>
 
+    <!--linear gradient colour-->
+    <section class="lg_video_sec">
+    </section>
 
+    <!--videos-->
+    <section id="video" class="p-5">
+      <div class="container-fluid text-center">
+        <h3 class="text-center sm-p-5"><ion-icon class="reveal fade-bottom" name="radio-outline"></ion-icon>
+          <p class="reveal fade-bottom2">Induction Video</p>
+        </h3>
+        <center class="reveal fade-bottom3 d-flex d-sm-none" style="justify-content: center;">
+          <iframe width="270" height="220" src="https://www.youtube.com/embed/DkhQoVPrhrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
+        <center class="reveal fade-bottom3 d-none d-sm-flex d-md-none" style="justify-content: center;">
+          <iframe width="600" height="400" src="https://www.youtube.com/embed/DkhQoVPrhrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
+        <center class="reveal fade-bottom3 d-none d-md-flex" style="justify-content: center;">
+          <iframe width="900" height="512" src="https://www.youtube.com/embed/DkhQoVPrhrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
+      </div>
+    </section>
+
+    <!--linear gradient colour-->
+    <section class="lg_about_sec">
+    </section>
+    
     <!--About us-->
-    <section class="text-white p-5" id="about">
+    <section class=" sm-p-5" id="about">
       <div class="container-fluid">
         <div class="text-center">
-          <h2 class="reveal fade-bottom1">About Us</h2>
+          <h3 class="text-center"><ion-icon class="reveal fade-bottom" name="radio-outline"></ion-icon>
+          <h3 class="reveal fade-bottom1">About Us</h3>
           <p class="lead reveal fade-bottom2">We are Ehsaas Dramatics Society</p>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-8 text-center reveal fade-bottom3">
-          <p class="text-muted my-4">
+      <div class="row sm-justify-content-center m-0">
+        <div class="md-col-8 text-center reveal fade-right">
+          <p class="text-muted my-4" style="font-family: Arial, Helvetica, sans-serif ;">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
             dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen 
             book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
             desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
           </p> 
-          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reg-modal">
+          <button class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#reg-modal">
             <!--fade bottom was not working here seperately-->
             Register For Updates
           </button>
@@ -146,9 +196,9 @@
       </div>
     </section>
     <!--modal-->
-    <div class="modal fade text-center" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal fade text-center text-secondary" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content bg-dark">
           <div class="modal-header">
             <h5 class="modal-title text-center" id="modal-title">
               Get Latest Updates...
@@ -156,7 +206,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close">
           </div>
           <div class="modal-body">
-            <p>
+            <p style="font-family: Arial, Helvetica, sans-serif ">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
               dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen 
               book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
@@ -166,7 +216,7 @@
             <label for="modal-email" class="form-label">
               Your email address
             </label>
-            <input type="email" id="modal-email" class="form-control" placeholder="e.g.abc@gmail.com"> <br>
+            <input type="email" id="modal-email" class="form-control" style="font-family: Arial, Helvetica, sans-serif " placeholder="e.g.abc@gmail.com"> <br>
           </div>
           <div class="modal-footer">
             <button class="btn btn-primary">Submit</button>
@@ -174,7 +224,6 @@
         </div>
       </div>
     </div>
-    <!--Videos-->
     
 
     <!--Trailer-->

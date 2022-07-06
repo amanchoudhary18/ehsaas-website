@@ -1,0 +1,168 @@
+.wrapper {
+	margin: 0 auto 100px auto;
+  width: 100%;
+}
+
+.stage {
+	list-style: none;
+	padding: 0;
+  display:flex;
+  justify-content: center;
+}
+@media  screen and (max-width:1200px){
+  #card2{
+    display: none;
+  }
+  #card3{
+    display: none;
+  }
+}
+@media  screen and (max-width:510px){
+  .stage {
+    list-style: none;
+    display:block;
+    justify-content: center;
+  }
+  #card_wrapper{
+    padding:10px;
+  }
+}
+@media  screen and (max-width:500px){
+ #card_wrapper{
+  padding: 30px;
+ }
+}
+@media  screen and (max-width:438px){
+  #card_wrapper{
+   padding: 10px;
+  }
+ }
+ @media  screen and (max-width:395px){
+  #card_wrapper{
+   padding: 0px;
+  }
+}
+.scene {
+	width: 250px;
+	height: 500px;
+	margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+	perspective: 1000px;
+}
+.movie {
+	transform-style: preserve-3d;
+	transform: translateZ(-130px);
+	transition: transform 350ms;
+}
+.movie:hover {
+	transform: rotateY(-78deg) translateZ(20px);
+}
+.movie .poster, 
+.movie .info {
+  position: absolute;
+  width: 260px;
+  height: 450px;
+  background-color: rgb(85, 10, 10);
+  backface-visibility: hidden;
+}
+.movie .poster  {
+    transform: translateZ(130px);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .movie .info {
+    transform: rotateY(90deg) translateZ(130px);
+    border: 1px solid #eae5e5;
+    font-size: 0.75em;
+  }
+  .movie::after {
+    content: '';
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+    transform-origin: 100% 100%;
+    transform: rotateX(90deg) translateY(130px);
+    transition: box-shadow 350ms;
+  }
+  
+  .movie:hover::after {
+    box-shadow: 20px -5px 50px rgba(0,0,0,0.3);
+  }
+  .info header {
+    color: #FFF;
+    padding: 7px 10px;
+    height: 195px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-shadow: 0px 15px 15px rgba(0,0,0,1);
+  }
+  
+  .info header h1 {
+    margin: 0 0 2px;
+    font-size: 1.4em;
+  }
+  
+  .info header .rating {
+    border: 1px solid #FFF;
+    padding: 0px 3px;
+  }
+  
+  .info p {
+    padding: 1.2em 1.4em;
+    margin: 2px 0 0;
+    text-shadow: 0px 2px 2px rgba(0,0,0,1);
+    color: rgb(253, 246, 246);
+    line-height: 1.4em;
+    border-top: 10px solid #555;
+  }
+  .movie .poster,
+  .movie .info,
+  .movie .info header {
+    transition: box-shadow 350ms;
+  }
+  
+  .movie .poster {
+    box-shadow: inset 300px 0px 400px rgba(255,255,255,0);
+  }
+  
+  .movie:hover .poster {
+    box-shadow: inset 300px 0px 400px rgba(50, 47, 47, 0.8);
+  }
+  .movie .info, 
+.movie .info header {
+  box-shadow: inset -300px 0px 400px rgba(0,0,0,0.5);
+}
+
+.movie:hover .info, 
+.movie:hover .info header {
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0);
+}
+.scene:nth-child(1) .movie .poster {
+    background-image: url(white_logo.jpeg);
+    background-size: 270px;
+  }  
+  .scene:nth-child(2) .poster {
+    background-image: url(white_logo.jpeg);
+    background-size: 270px;
+  }
+  
+  .scene:nth-child(3) .poster {
+    background-image: url(white_logo.jpeg);
+    background-size: 270px;
+  }
+  
+  .scene:nth-child(1) .info header {
+    background-image: url(../img/still01.jpg);
+  }
+  
+  .scene:nth-child(2) .info header {
+    background-image: url(../img/still02.jpg);
+  }
+  
+  .scene:nth-child(3) .info header {
+    background-image: url(../img/still03.jpg);
+  }
+
