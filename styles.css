@@ -6,9 +6,6 @@
     width: 100%;
     opacity: 0.98;
 }
-.sticky + .content {
-    padding-top: 200px;
-}
 /* 
 
 trailer */
