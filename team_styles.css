@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    padding:2rem;
+    background:rgb(22, 21, 21);
+    /* display: block; */
+    min-height: 100vh;
+}
+.heading{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    /* font-family:'Times New Roman', Times, serif; */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(0,0,0,0.5);
+}
+.heading h1{
+    color:rgb(218, 208, 208);
+    border: solid 5px rgb(180, 35, 35);
+    border-radius: 20px;
+    padding: 1rem;
+}
+.exeK19{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    /* font-family:'Times New Roman', Times, serif; */
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgb(0,0,0,0.5);
+}
+.exeK19 h1{
+    color:rgb(218, 208, 208);
+    border: solid 5px rgb(180, 35, 35);
+    border-radius: 20px;
+    padding: 1rem;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.card{
+    position: relative;
+    background:rgb(218, 208, 208);
+    border:solid 2px rgb(180, 35, 35);
+    height: 180px;
+    width:250px;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+    transition: 0.5s;
+    margin: 50px;
+}
+.card:hover{
+    height: 350px;
+    width:280px;
+}
+.imgBx{
+    position: absolute;
+    background: rgb(218, 208, 208);
+    border:solid 1px rgb(180, 35, 35);
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    top:-50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: 0.5s;
+}
+.card:hover .imgBx{
+    width: 200px;
+    height: 200px;
+}
+@media screen and (max-width:394px)
+{
+    body{
+        padding:5px;
+    }
+    .imgBx{
+        position: absolute;
+        background: rgb(218, 208, 208);
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        top:-50px;
+        border-radius: 20px;
+        box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .card:hover .imgBx{
+        width: 150px;
+        height: 150px;
+    }
+    .card .content .details{
+        padding: 20px;
+        transform: translateY(200px);
+        transition: none;
+    }
+    .exeK19 h1{
+        padding: 5px;
+    }
+}
+.imgBx img{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.card .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+.card .content .details{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(100px);
+}
+.card:hover .content .details{
+    transform: translateY(0px);
+}
+.card .content .details h2{
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2rem;
+}
+.card .content .details h2 span{
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.75;
+}
+.data{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    opacity: 0.75;
+    padding: 5px;
+    font-size: larger;
+    color: #555;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    font-size:x-large;
+}
+.contact a{
+    color: rgb(169, 58, 58);
+    padding: 5px;
+}
+.card:hover .data .contact{
+    display: flex;
+}
+
