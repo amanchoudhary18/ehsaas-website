@@ -1,0 +1,15 @@
+div.dropdown-menu.show {
+  background-color: black;
+}
+
+a.dropdown-item {
+  color: rgb(178, 62, 62);
+  font-size: 20px;
+}
+
+@media screen and (max-width: 370px) {
+  #hdr_logo {
+    height: 0px;
+    width: 0px;
+  }
+}

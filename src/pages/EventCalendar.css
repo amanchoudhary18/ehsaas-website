@@ -1,0 +1,19 @@
+.event-calendar {
+  background-color: black;
+}
+
+.home {
+  padding-left: "100px";
+}
+
+@media screen and (max-width: 1200px) {
+  .calendar {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .calendar {
+    width: 100%;
+  }
+}
