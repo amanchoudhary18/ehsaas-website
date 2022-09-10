@@ -1,0 +1,20 @@
+.contact-us {
+  color: white;
+  background-color: rgb(23, 23, 23) !important;
+}
+
+.contact-us::placeholder {
+  color: white;
+}
+
+.form-control {
+  height: 50px;
+  background-color: #484848;
+  color: white;
+  border: none;
+}
+
+.form-control::placeholder {
+  color: white;
+  font-family: monospace;
+}

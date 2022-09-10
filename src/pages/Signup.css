@@ -1,0 +1,21 @@
+.signup {
+  position: relative;
+}
+.signup__container {
+  width: 40%;
+  height: 35rem;
+  background-color: azure;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  opacity: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup__container__heading {
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+}

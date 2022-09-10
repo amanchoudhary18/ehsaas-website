@@ -3,14 +3,34 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import EventCalendar from "./pages/EventCalendar";
 import Exebody from "./pages/Exebody";
-
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Navbars from "./components/Navbars";
+import Eventedit from "./pages/Eventedit";
+import { useCookies } from "react-cookie";
+import { useJwt } from "react-jwt";
+import React, { useState, useEffect } from "react";
 function App() {
+  const [auth, setAuth] = useState(false);
+  const [cookies, setCookie] = useCookies("username");
+  let { decodedToken, isExpired, reEvaluateToken } = useJwt(cookies.user);
+  useEffect(() => {
+    if (decodedToken)
+      if (decodedToken.id && !isExpired) {
+        setAuth(true);
+      }
+  }, [decodedToken]);
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/calendar" element={<EventCalendar />}></Route>
-        <Route path="/exebody" element={<Exebody />}></Route>
+        <Route path="/" element={<Navbars />}>
+          <Route index element={<Home auth={auth} />}></Route>
+          <Route path="/event/:id" element={<Eventedit auth={auth} />} />
+          <Route path="/calendar" element={<EventCalendar />}></Route>
+          <Route path="/exebody" element={<Exebody />}></Route>
+          <Route path="/login" element={<Login setAuth={setAuth} />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+        </Route>
       </Routes>
     </div>
   );

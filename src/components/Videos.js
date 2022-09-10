@@ -180,6 +180,7 @@ const Videos = () => {
           </div>
         </div>
       </section>
+      <section className="lg_contact_sec"></section>
     </div>
   );
 };

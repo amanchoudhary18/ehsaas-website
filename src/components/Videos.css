@@ -159,3 +159,8 @@ img {
     opacity: 1;
   }
 }
+
+.lg_contact_sec {
+  height: 100px;
+  background: linear-gradient(to top, rgb(23, 23, 23), rgb(11, 11, 11));
+}

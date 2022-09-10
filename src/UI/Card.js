@@ -3,6 +3,7 @@ import Tilt from "react-vanilla-tilt";
 import "./Card.css";
 
 const Card = (props) => {
+  console.log("props", props.image);
   return (
     <div className="container" style={{ backgroundColor: "rgb(11, 11, 11)" }}>
       <Tilt

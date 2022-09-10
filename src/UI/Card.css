@@ -28,13 +28,17 @@
 .container .card .poster {
   position: absolute;
   transition: 0.5s;
+  height: inherit;
+  width: inherit;
 }
 .container .card:hover .poster {
   opacity: 0;
   transform: translateY(-200px);
 }
 .container .card .poster img {
-  width: 200px;
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
 }
 .container .card .content {
   padding: 20px;

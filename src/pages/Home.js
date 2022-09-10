@@ -1,16 +1,18 @@
 import React from "react";
+import ContactUs from "../components/ContactUs";
 import Events from "../components/Events";
+import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 import Videos from "../components/Videos";
-import Navbars from "../components/Navbars";
 
-const Home = () => {
+const Home = ({ auth }) => {
   return (
     <div>
-      <Navbars />
       <Intro />
-      <Events />
+      <Events auth={auth} />
       <Videos />
+      <ContactUs />
+      <Footer />
     </div>
   );
 };
