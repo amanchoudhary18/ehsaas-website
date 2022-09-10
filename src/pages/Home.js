@@ -2,14 +2,12 @@ import React from "react";
 import Events from "../components/Events";
 import Intro from "../components/Intro";
 import Videos from "../components/Videos";
-import Navbars from "../components/Navbars";
 
-const Home = () => {
+const Home = ({ auth }) => {
   return (
     <div>
-      <Navbars />
       <Intro />
-      <Events />
+      <Events auth={auth} />
       <Videos />
     </div>
   );

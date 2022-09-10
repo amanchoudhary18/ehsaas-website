@@ -1,41 +1,26 @@
-import React from "react";
 import { IonIcon } from "react-ion-icon";
 import logo from "../Images/ehsaasredlogo.png";
 import Card from "../UI/Card";
-
+import React, { useState, useEffect } from "react";
 import "./Events.css";
-
-const Events = () => {
-  const events = [
-    {
-      image: logo,
-      number: "01",
-      title: "Card One",
-      content:
-        " Lorem ipsum, dolor sit amet consectetur adipisicing elit Obcaecati ducimus corporis harum possimus nesciunt magnam natus debitis.",
-    },
-    {
-      image: logo,
-      number: "02",
-      title: "Card Two",
-      content:
-        " Lorem ipsum, dolor sit amet consectetur adipisicing elit Obcaecati ducimus corporis harum possimus nesciunt magnam natus debitis.",
-    },
-    {
-      image: logo,
-      number: "03",
-      title: "Card Three",
-      content:
-        " Lorem ipsum, dolor sit amet consectetur adipisicing elit Obcaecati ducimus corporis harum possimus nesciunt magnam natus debitis.",
-    },
-    {
-      image: logo,
-      number: "04",
-      title: "Card Four",
-      content:
-        " Lorem ipsum, dolor sit amet consectetur adipisicing elit Obcaecati ducimus corporis harum possimus nesciunt magnam natus debitis.",
-    },
-  ];
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+const Events = ({ auth }) => {
+  const [events, setEvents] = useState([]);
+  const [cookies, setCookie] = useCookies("username");
+  const navigate = useNavigate();
+  useEffect(() => {
+    const getEvents = async () => {
+      const promise = await fetch(`http://127.0.0.1:4000/api/v1/events`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const response = await promise.json();
+      console.log(response);
+      setEvents(response.data.events);
+    };
+    getEvents();
+  }, []);
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
 
@@ -52,6 +37,34 @@ const Events = () => {
     }
   }
   window.addEventListener("scroll", reveal);
+  const handleDelete = async (id) => {
+    const confirmation = window.confirm(
+      "Are You sure? Once deleted, the file cannot be recovered"
+    );
+    if (!confirmation) {
+      return;
+    }
+    console.log(id);
+    const promise = await fetch(`http://127.0.0.1:4000/api/v1/events/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + cookies.user,
+      },
+    });
+    const response = await promise.json();
+    console.log(response);
+    if (response.status === "success") {
+      console.log("hello");
+      const newEvent = events.filter((event) => {
+        return event._id != id;
+      });
+      setEvents(newEvent);
+    }
+  };
+  const handleEdit = (id) => {
+    navigate(`/event/${id}`);
+  };
 
   return (
     <div>
@@ -70,38 +83,40 @@ const Events = () => {
 
           <div className="wrapper reveal fade-right sm-p-5" id="card_wrapper">
             <ul className="stage">
-              <li className="scene" id="card1">
-                <Card
-                  image={events[0].image}
-                  number={events[0].number}
-                  title={events[0].title}
-                  content={events[0].content}
-                />
-              </li>
-              <li className="scene" id="card2">
-                <Card
-                  image={events[1].image}
-                  number={events[1].number}
-                  title={events[1].title}
-                  content={events[1].content}
-                />
-              </li>
-              <li className="scene" id="card3">
-                <Card
-                  image={events[2].image}
-                  number={events[2].number}
-                  title={events[2].title}
-                  content={events[2].content}
-                />
-              </li>
-              <li className="scene" id="card4">
-                <Card
-                  image={events[3].image}
-                  number={events[3].number}
-                  title={events[3].title}
-                  content={events[3].content}
-                />
-              </li>
+              {events.length &&
+                [1, 2, 3, 4].map((el, i) => {
+                  console.log(events);
+                  return (
+                    <li className="scene" id={`card${i}`}>
+                      <Card
+                        image={events[i].image}
+                        number={i}
+                        title={events[i].name}
+                        content={events[i].description}
+                      />
+                      {auth && (
+                        <div className="card__event__button">
+                          <button
+                            className="event__delete"
+                            onClick={() => {
+                              handleDelete(events[i]._id);
+                            }}
+                          >
+                            Delete
+                          </button>
+                          <button
+                            className="event__edit"
+                            onClick={() => {
+                              handleEdit(events[i]._id);
+                            }}
+                          >
+                            Edit
+                          </button>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           <div className="reveal fade-right">
