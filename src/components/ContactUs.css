@@ -18,3 +18,17 @@
   color: white;
   font-family: monospace;
 }
+
+span{
+    color: white;
+    font-weight: 600;
+    font-size: 25px ;
+}
+.leftHalf{
+  margin-left: 5rem;
+}
+@media screen and (max-width:500px){
+  .leftHalf{
+    margin-left: 3rem;
+  }
+}

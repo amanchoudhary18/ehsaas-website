@@ -3,13 +3,26 @@ div.dropdown-menu.show {
 }
 
 a.dropdown-item {
-  color: rgb(178, 62, 62);
   font-size: 20px;
 }
-
+a.dropdown-item:hover{
+  color: rgb(178, 62, 62);
+}
+.navLink:hover{
+  color: rgb(178, 62, 62) !important;
+}
+#basic-nav-dropdown:hover{
+  color: rgb(178, 62, 62) !important;
+}
 @media screen and (max-width: 370px) {
   #hdr_logo {
     height: 0px;
     width: 0px;
   }
+}
+.NavIcon{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  max-width: 40%;
 }

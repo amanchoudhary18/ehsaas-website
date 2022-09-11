@@ -14,7 +14,7 @@ const Intro = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div style={{ backgroundColor: "black" }}>
+    <div id="Home" style={{ backgroundColor: "black" }}>
       <Modal
         show={show}
         onHide={handleClose}
@@ -59,10 +59,7 @@ const Intro = () => {
             >
               <img className="" src={IntroLogo} height="540" alt="" />
             </div>
-            <div
-              className="text-center d-none d-md-block d-xl-none"
-              id="bouncing_logo_mob"
-            >
+            <div className="text-center d-none d-md-block d-lg-none">
               <img className="" src={IntroLogo} height="380" alt="" />
             </div>
             <div className="text-center d-md-none" id="bouncing_logo_mob">

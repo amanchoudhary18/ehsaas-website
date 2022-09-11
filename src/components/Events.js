@@ -67,7 +67,7 @@ const Events = ({ auth }) => {
   };
 
   return (
-    <div>
+    <div id="#events">
       <section
         className="bg light pt-5"
         style={{
@@ -81,11 +81,10 @@ const Events = ({ auth }) => {
             <p className="reveal fade-bottom2">Upcoming Events</p>
           </h3>
 
-          <div className="wrapper reveal fade-right sm-p-5" id="card_wrapper">
+          <div className="wrapper reveal fade-right" id="card_wrapper">
             <ul className="stage">
               {events.length &&
-                [1, 2, 3, 4].map((el, i) => {
-                  console.log(events);
+                [1, 2,3].map((el, i) => { 
                   return (
                     <li className="scene" id={`card${i}`}>
                       <Card
@@ -119,13 +118,13 @@ const Events = ({ auth }) => {
                 })}
             </ul>
           </div>
-          <div className="reveal fade-right">
+          {/* <div className="reveal fade-right">
             <center>
               <a id="mob_card" href="#mobcard">
                 <ion-icon name="clipboard"></ion-icon>
               </a>
             </center>
-          </div>
+          </div> */}
 
           <div className="extra_event" style={{ height: "5px" }}></div>
         </div>

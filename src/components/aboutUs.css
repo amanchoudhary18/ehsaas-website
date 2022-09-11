@@ -1,0 +1,10 @@
+#aboutUs{
+    background-color: black !important;
+    height: 100vh;
+}
+.aboutUs_container{
+    padding: 5rem;
+    display: block;
+    height: auto;
+} 
+

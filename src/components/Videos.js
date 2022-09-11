@@ -73,7 +73,7 @@ const Videos = () => {
   }
 
   return (
-    <div>
+    <div id="videos">
       <section id="video" className="p-5">
         <div className="container-fluid text-center ">
           <h3 className="text-center sm-p-5">

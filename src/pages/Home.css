@@ -74,9 +74,9 @@ div.bar.container-fluid {
   background-size: cover;
   min-height: 60vh;
 }
-#bouncing_logo {
+/* #bouncing_logo {
   animation: animate 5s linear infinite;
-}
+} */
 /* #bouncing_logo_mob{
     animation: animate_mob 5s linear infinite;
 } */
@@ -111,13 +111,12 @@ div.bar.container-fluid {
   }
 }
 /*hover effects*/
-.nav-link h4 {
+/* .nav-link h4 {
   transition: 4 0.5 ease-in;
 }
 .nav-link h4:hover {
   color: rgb(190, 30, 30);
-}
-
+} */
 /* upcoming events */
 #events {
   background-color: rgb(11, 10, 10);

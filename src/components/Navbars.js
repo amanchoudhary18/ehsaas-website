@@ -36,12 +36,12 @@ const Navbars = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className=" me-auto pb-3" style={{ fontSize: "27px" }}>
-              <Nav.Link href="#home" onClick={handleNavigateButton}>
+             <Nav.Link className="navLink" href="#Home" onClick={handleNavigateButton}>  
                 Home
               </Nav.Link>
-              <Nav.Link href="#events">Events</Nav.Link>
-              <Nav.Link href="#videos">Achievements</Nav.Link>
-              <Nav.Link href="#pricing">Videos</Nav.Link>
+              <Nav.Link className="navLink" href="#events">Events</Nav.Link>
+              <Nav.Link className="navLink" href="#">Achievements</Nav.Link>
+              <Nav.Link className="navLink" href="#videos">Videos</Nav.Link>
 
               <NavDropdown title="More" id="basic-nav-dropdown">
                 <Link to="/exebody" style={{ textDecoration: "none" }}>
@@ -55,8 +55,8 @@ const Navbars = () => {
                     Event Calender
                   </NavDropdown.Item>
                 </Link>
-                <NavDropdown.Item href="#action/3.3">Gallery</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">About-us</NavDropdown.Item>
+                <NavDropdown.Item href="#Contact_us">Contact-us</NavDropdown.Item>
+                <NavDropdown.Item href="#about_us">About-us</NavDropdown.Item>
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <NavDropdown.Item href="#action/3.4">Login</NavDropdown.Item>
                 </Link>
@@ -67,23 +67,23 @@ const Navbars = () => {
                 </Link>
               </NavDropdown>
             </Nav>
-            <Nav>
-              <Nav.Link href="#deets">
+            <Nav className="NavIcon">
+              <Nav.Link className="link"  href="#deets">
                 <h3>
                   <IonIcon name="logo-youtube" />
                 </h3>
               </Nav.Link>
-              <Nav.Link href="#deets">
+              <Nav.Link className="link" href="#deets">
                 <h3>
                   <IonIcon name="mail-outline" />
                 </h3>
               </Nav.Link>
-              <Nav.Link href="#deets">
+              <Nav.Link className="link" href="#deets">
                 <h3>
                   <IonIcon name="logo-facebook" />
                 </h3>
               </Nav.Link>
-              <Nav.Link href="#deets">
+              <Nav.Link className="link" href="#deets">
                 <h3>
                   <IonIcon name="logo-instagram" />
                 </h3>

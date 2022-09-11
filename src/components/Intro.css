@@ -7,9 +7,9 @@
 #bouncing_logo {
   animation: animate 5s linear infinite;
 }
-/* #bouncing_logo_mob {
+#bouncing_logo_mob {
   animation: animate_mob 5s linear infinite;
-} */
+}
 #main_text {
   border-left: solid rgb(190, 30, 30) 10px;
   animation: slide 1s 0.2s ease;
@@ -50,7 +50,7 @@
     transform: translateY(-50px);
   }
 }
-/* @keyframes animate_mob {
+@keyframes animate_mob {
   0%,
   100% {
     transform: translateY(75px);
@@ -58,7 +58,7 @@
   50% {
     transform: translateY(0px);
   }
-} */
+}
 
 .lg_up_events {
   height: 100px;
