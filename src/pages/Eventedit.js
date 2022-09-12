@@ -23,10 +23,8 @@ const Eventedit = () => {
         },
       });
       const response = await promise.json();
-      console.log("response", response);
       if (response.status == "success") {
         const event = response.data.event[0];
-        console.log(event);
         setEvent(response.data.event[0]);
         setTitle(event.name);
         setDescription(event.description);
@@ -40,7 +38,6 @@ const Eventedit = () => {
     e.preventDefault();
     const form = new FormData();
     const images = document.querySelector(".coverImage");
-    console.log("length", images.files.length);
     if (images.files.length) form.append(`image`, images.files[0]);
     form.append("name", title);
     form.append("description", description);

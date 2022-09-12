@@ -29,7 +29,6 @@ const Signup = () => {
       }),
     });
     const response = await promise.json();
-    console.log(response);
     setAlertMessage(response.message);
     setAlert(true);
   };

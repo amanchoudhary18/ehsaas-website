@@ -29,11 +29,10 @@ const Login = ({ setAuth, auth }) => {
     if (decodedToken)
       if (decodedToken.id && !isExpired) {
         setAuth(true);
-        console.log(decodedToken, isExpired);
+
         navigate("/");
       }
   }, [cookies, decodedToken]);
-  console.log(process.env.REACT_APP_URL);
   const handleSubmit = async (e) => {
     e.preventDefault();
     let promise = await fetch(`${process.env.REACT_APP_URL}/users/login`, {
