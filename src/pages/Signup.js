@@ -14,7 +14,7 @@ const Signup = () => {
   const [cookies, setCookie] = useCookies("username");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let promise = await fetch(`http://127.0.0.1:4000/api/v1/users/signup`, {
+    let promise = await fetch(`${process.env.REACT_APP_URL}/users/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

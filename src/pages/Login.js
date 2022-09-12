@@ -5,14 +5,20 @@ import Modal from "../components/Modal";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { useJwt } from "react-jwt";
-const Login = ({ setAuth }) => {
+const Login = ({ setAuth, auth }) => {
   const [username, setName] = useState("");
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState(false);
   const [message, setAlertMessage] = useState("");
-  const [cookies, setCookie] = useCookies("username");
+  const [cookies, setCookie, removeCookie] = useCookies("username");
   let { decodedToken, isExpired, reEvaluateToken } = useJwt(cookies.user);
   const navigate = useNavigate();
+  useEffect(() => {
+    removeCookie("username");
+    removeCookie("user");
+    setAuth(false);
+    cookies.user = undefined;
+  }, []);
   useEffect(() => {
     if (cookies && cookies.user) {
       reEvaluateToken(cookies.user);
@@ -27,9 +33,10 @@ const Login = ({ setAuth }) => {
         navigate("/");
       }
   }, [cookies, decodedToken]);
+  console.log(process.env.REACT_APP_URL);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let promise = await fetch(`http://127.0.0.1:4000/api/v1/users/login`, {
+    let promise = await fetch(`${process.env.REACT_APP_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,9 +48,9 @@ const Login = ({ setAuth }) => {
       setCookie("user", response.token);
       setTimeout(() => {
         navigate("/");
-      }, 3000);
+      }, 2000);
     }
-    if (response.status == "success") {
+    if (response.status === "success") {
       setAuth(true);
     }
     setAlertMessage(response.message);

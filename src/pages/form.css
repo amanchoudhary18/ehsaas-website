@@ -20,10 +20,10 @@
 .form__input:focus {
   outline: none;
   box-shadow: 0 1rem 2rem rgba(black, 0.1);
-  border-bottom: 3px solid rgb(31, 183, 31);
+  border: 3px solid rgb(31, 183, 31);
 }
 .form__input:focus:invalid {
-  border-bottom: 3px solid rgb(183, 31, 31);
+  border: 3px solid rgb(183, 31, 31);
 }
 .btn {
   border: 1px solid black;

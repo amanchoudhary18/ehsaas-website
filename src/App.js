@@ -28,7 +28,10 @@ function App() {
           <Route path="/event/:id" element={<Eventedit auth={auth} />} />
           <Route path="/calendar" element={<EventCalendar />}></Route>
           <Route path="/exebody" element={<Exebody />}></Route>
-          <Route path="/login" element={<Login setAuth={setAuth} />}></Route>
+          <Route
+            path="/login"
+            element={<Login setAuth={setAuth} auth={auth} />}
+          ></Route>
           <Route path="/signup" element={<Signup />}></Route>
         </Route>
       </Routes>
