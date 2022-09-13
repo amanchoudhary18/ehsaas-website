@@ -4,7 +4,7 @@
   justify-content: center;
   height: auto;
 }
-#alert_box{
+#alert_box {
   height: 0px;
 }
 .signup__container {
@@ -12,7 +12,7 @@
   height: 32rem;
   background-color: azure;
   position: absolute;
-  left:28%;
+  left: 28%;
   opacity: 1;
   border-radius: 10px;
   display: flex;

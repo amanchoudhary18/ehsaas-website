@@ -15,7 +15,7 @@ const Eventedit = () => {
   const [event, setEvent] = useCookies("");
   useEffect(() => {
     const getEvent = async () => {
-      let promise = await fetch(`http://127.0.0.1:4000/api/v1/events/${id}`, {
+      let promise = await fetch(`${process.env.REACT_APP_URL}/events/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -23,10 +23,8 @@ const Eventedit = () => {
         },
       });
       const response = await promise.json();
-      console.log("response", response);
       if (response.status == "success") {
         const event = response.data.event[0];
-        console.log(event);
         setEvent(response.data.event[0]);
         setTitle(event.name);
         setDescription(event.description);
@@ -40,12 +38,11 @@ const Eventedit = () => {
     e.preventDefault();
     const form = new FormData();
     const images = document.querySelector(".coverImage");
-    console.log("length", images.files.length);
     if (images.files.length) form.append(`image`, images.files[0]);
     form.append("name", title);
     form.append("description", description);
     form.append("formLink", formLink);
-    const res = await fetch(`http://127.0.0.1:4000/api/v1/events/${id}`, {
+    const res = await fetch(`${process.env.REACT_APP_URL}/events/${id}`, {
       method: "PATCH",
       headers: { Authorization: "Bearer " + cookies.user },
       body: form,

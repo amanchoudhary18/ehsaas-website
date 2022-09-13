@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 const Events = ({ auth }) => {
   const [events, setEvents] = useState([]);
   const [cookies, setCookie] = useCookies("username");
+  const cards = Array(events.length > 4 ? 4 : events.length);
+  console.log(events);
+  cards.fill(1, 0);
   const navigate = useNavigate();
   useEffect(() => {
     const getEvents = async () => {
@@ -16,7 +19,6 @@ const Events = ({ auth }) => {
         headers: { "Content-Type": "application/json" },
       });
       const response = await promise.json();
-      console.log(response);
       setEvents(response.data.events);
     };
     getEvents();
@@ -44,7 +46,6 @@ const Events = ({ auth }) => {
     if (!confirmation) {
       return;
     }
-    console.log(id);
     const promise = await fetch(`http://127.0.0.1:4000/api/v1/events/${id}`, {
       method: "DELETE",
       headers: {
@@ -53,12 +54,11 @@ const Events = ({ auth }) => {
       },
     });
     const response = await promise.json();
-    console.log(response);
     if (response.status === "success") {
-      console.log("hello");
       const newEvent = events.filter((event) => {
         return event._id != id;
       });
+      console.log(newEvent);
       setEvents(newEvent);
     }
   };
@@ -84,7 +84,7 @@ const Events = ({ auth }) => {
           <div className="wrapper reveal fade-right" id="card_wrapper">
             <ul className="stage">
               {events.length &&
-                [1, 2,3].map((el, i) => { 
+                cards.map((el, i) => {
                   return (
                     <li className="scene" id={`card${i}`}>
                       <Card

@@ -35,7 +35,12 @@ const Signup = () => {
   };
   return (
     <>
-      <Modal setAlert={setAlert} alert={alert} message={message} id="alert_box" />
+      <Modal
+        setAlert={setAlert}
+        alert={alert}
+        message={message}
+        id="alert_box"
+      />
       <div className="signup">
         <div className="signup__container">
           <div className="signup__container__heading">SignUp</div>

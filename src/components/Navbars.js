@@ -14,6 +14,11 @@ const Navbars = () => {
     const target = e.target.getAttribute("href");
     navigate(`/${target}`);
   };
+  const navigate = useNavigate();
+  const handleNavigateButton = (e) => {
+    const target = e.target.getAttribute("href");
+    navigate(`/${target}`);
+  };
   return (
     <>
       <Navbar
@@ -43,12 +48,12 @@ const Navbars = () => {
               <Nav.Link className="navLink" href="#">Achievements</Nav.Link>
               <Nav.Link className="navLink" href="#videos">Videos</Nav.Link>
 
-              <NavDropdown title="More" id="basic-nav-dropdown">
-                <Link to="/exebody" style={{ textDecoration: "none" }}>
-                  <NavDropdown.Item href="#action/3.1">
-                    Executive Body
-                  </NavDropdown.Item>
-                </Link>
+                <NavDropdown title="More" id="basic-nav-dropdown">
+                  <Link to="/exebody" style={{ textDecoration: "none" }}>
+                    <NavDropdown.Item href="#action/3.1">
+                      Executive Body
+                    </NavDropdown.Item>
+                  </Link>
 
                 <Link to="/calendar" style={{ textDecoration: "none" }}>
                   <NavDropdown.Item href="#action/3.2">
