@@ -14,7 +14,7 @@ const Intro = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div id="Home" style={{ backgroundColor: "black" }}>
+    <div style={{ backgroundColor: "black" }}>
       <Modal
         show={show}
         onHide={handleClose}

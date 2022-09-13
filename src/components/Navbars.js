@@ -14,13 +14,8 @@ const Navbars = () => {
     const target = e.target.getAttribute("href");
     navigate(`/${target}`);
   };
-  const navigate = useNavigate();
-  const handleNavigateButton = (e) => {
-    const target = e.target.getAttribute("href");
-    navigate(`/${target}`);
-  };
   return (
-    <>
+    <div id="Home">
       <Navbar
         collapseOnSelect
         expand="xl"
@@ -41,26 +36,38 @@ const Navbars = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className=" me-auto pb-3" style={{ fontSize: "27px" }}>
-             <Nav.Link className="navLink" href="#Home" onClick={handleNavigateButton}>  
+              <Nav.Link
+                className="navLink"
+                href="#Home"
+                onClick={handleNavigateButton}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link className="navLink" href="#events">Events</Nav.Link>
-              <Nav.Link className="navLink" href="#">Achievements</Nav.Link>
-              <Nav.Link className="navLink" href="#videos">Videos</Nav.Link>
+              <Nav.Link className="navLink" href="#events">
+                Events
+              </Nav.Link>
+              <Nav.Link className="navLink" href="#">
+                Achievements
+              </Nav.Link>
+              <Nav.Link className="navLink" href="#videos">
+                Videos
+              </Nav.Link>
 
-                <NavDropdown title="More" id="basic-nav-dropdown">
-                  <Link to="/exebody" style={{ textDecoration: "none" }}>
-                    <NavDropdown.Item href="#action/3.1">
-                      Executive Body
-                    </NavDropdown.Item>
-                  </Link>
+              <NavDropdown title="More" id="basic-nav-dropdown">
+                <Link to="/exebody" style={{ textDecoration: "none" }}>
+                  <NavDropdown.Item href="#action/3.1">
+                    Executive Body
+                  </NavDropdown.Item>
+                </Link>
 
                 <Link to="/calendar" style={{ textDecoration: "none" }}>
                   <NavDropdown.Item href="#action/3.2">
                     Event Calender
                   </NavDropdown.Item>
                 </Link>
-                <NavDropdown.Item href="#Contact_us">Contact-us</NavDropdown.Item>
+                <NavDropdown.Item href="#Contact_us">
+                  Contact-us
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#about_us">About-us</NavDropdown.Item>
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <NavDropdown.Item href="#action/3.4">Login</NavDropdown.Item>
@@ -73,7 +80,7 @@ const Navbars = () => {
               </NavDropdown>
             </Nav>
             <Nav className="NavIcon">
-              <Nav.Link className="link"  href="#deets">
+              <Nav.Link className="link" href="#deets">
                 <h3>
                   <IonIcon name="logo-youtube" />
                 </h3>
@@ -98,7 +105,7 @@ const Navbars = () => {
         </Container>
       </Navbar>
       <Outlet></Outlet>
-    </>
+    </div>
   );
 };
 

@@ -7,24 +7,20 @@ import { IonIcon } from "react-ion-icon";
 const ContactUs = () => {
   return (
     <div className="contact-us container-fluid" id="Contact_us">
-      <h3 className="text-center sm-p-5" style={{ color: "rgb(190, 30, 30)" }}>
+      <h3 className="text-center sm-p-5" style={{ color: "rgb(178, 62, 62)" }}>
         <IonIcon className="reveal fade-bottom" name="radio-outline"></IonIcon>
         <p className="reveal fade-bottom2">Contact Us</p>
       </h3>
-      <div className="row m-auto mt-5">
+      <div className="row m-auto mt-5 reveal fade-right">
         <div className="col-lg-5 col-md-12 mt-5">
           <div className="leftHalf col-md-6">
             <IonIcon
               className="location reveal fade-bottom"
               name="location"
-              style={{color: "rgb(190, 30, 30)" }}
+              style={{ color: "rgb(178, 62, 62)" }}
               size="large"
             />
-            <span
-              className="mx-3"
-            >
-              Find Us
-            </span>
+            <span className="mx-3">Find Us</span>
             <p
               className="mt-2"
               style={{ color: "white", fontFamily: "monospace" }}
@@ -36,14 +32,10 @@ const ContactUs = () => {
               <IonIcon
                 className=" location reveal fade-bottom"
                 name="mail-open-outline"
-                style={{color: "rgb(190, 30, 30)"}}
+                style={{ color: "rgb(190, 30, 30)" }}
                 size="large"
               />
-              <span
-                className="mx-3"
-              >
-                Write to us
-              </span>
+              <span className="mx-3">Write to us</span>
               <p
                 className="mt-2"
                 style={{ color: "white", fontFamily: "monospace" }}

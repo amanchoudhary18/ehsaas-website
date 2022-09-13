@@ -75,7 +75,7 @@ const Events = ({ auth }) => {
         }}
         id="events"
       >
-        <div className="continer-fluid">
+        <div className="container-fluid">
           <h3 className="text-center">
             <IonIcon className="reveal fade-bottom" name="radio-outline" />
             <p className="reveal fade-bottom2">Upcoming Events</p>
@@ -118,13 +118,6 @@ const Events = ({ auth }) => {
                 })}
             </ul>
           </div>
-          {/* <div className="reveal fade-right">
-            <center>
-              <a id="mob_card" href="#mobcard">
-                <ion-icon name="clipboard"></ion-icon>
-              </a>
-            </center>
-          </div> */}
 
           <div className="extra_event" style={{ height: "5px" }}></div>
         </div>

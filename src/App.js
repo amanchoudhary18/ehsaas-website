@@ -20,15 +20,7 @@ function App() {
         setAuth(true);
       }
   }, [decodedToken]);
-  const [auth, setAuth] = useState(false);
-  const [cookies, setCookie] = useCookies("username");
-  let { decodedToken, isExpired, reEvaluateToken } = useJwt(cookies.user);
-  useEffect(() => {
-    if (decodedToken)
-      if (decodedToken.id && !isExpired) {
-        setAuth(true);
-      }
-  }, [decodedToken]);
+
   return (
     <div className="App">
       <Routes>
