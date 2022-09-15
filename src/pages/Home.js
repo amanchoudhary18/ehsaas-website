@@ -10,12 +10,13 @@ const Home = ({ auth }) => {
   return (
     <div>
       <Intro />
-      <Events auth={auth} auth={auth} />
+      <AboutUs />
+      <Events auth={auth} />
       <Videos />
       <ContactUs />
       <Footer />
-      {/* <AboutUs /> */}
     </div>
   );
 };
+
 export default Home;

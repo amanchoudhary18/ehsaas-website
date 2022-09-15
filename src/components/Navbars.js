@@ -15,7 +15,7 @@ const Navbars = ({ auth }) => {
     navigate(`/${target}`);
   };
   return (
-    <>
+    <div id="Home">
       <Navbar
         collapseOnSelect
         expand="xl"
@@ -115,7 +115,7 @@ const Navbars = ({ auth }) => {
         </Container>
       </Navbar>
       <Outlet></Outlet>
-    </>
+    </div>
   );
 };
 
