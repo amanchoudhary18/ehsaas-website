@@ -57,11 +57,10 @@ const Navbars = ({ auth }) => {
               </Nav.Link>
 
               <NavDropdown title="More" id="basic-nav-dropdown">
-                <Link to="/exebody" style={{ textDecoration: "none" }}>
-                  <NavDropdown.Item href="#action/3.1">
-                    Executive Body
-                  </NavDropdown.Item>
-                </Link>
+                <NavDropdown.Item href="#team">Executive Body</NavDropdown.Item>
+                <NavDropdown.Item href="#eventsConducted">
+                  Our Events
+                </NavDropdown.Item>
 
                 <NavDropdown.Item href="#Contact_us">
                   Contact-us
