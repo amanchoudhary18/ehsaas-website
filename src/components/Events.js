@@ -96,7 +96,7 @@ const Events = ({ auth }) => {
                       {auth && (
                         <div className="card__event__button">
                           <button
-                            className="event__delete"
+                            className="btn btn-secondary  event__delete"
                             onClick={() => {
                               handleDelete(events[i]._id);
                             }}
@@ -104,7 +104,7 @@ const Events = ({ auth }) => {
                             Delete
                           </button>
                           <button
-                            className="event__edit"
+                            className="btn btn-secondary mx-4 event__edit"
                             onClick={() => {
                               handleEdit(events[i]._id);
                             }}

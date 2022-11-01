@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 // import EventCalendar from "./pages/EventCalendar";
-import Exebody from "./pages/Exebody";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbars from "./components/Navbars";
@@ -27,7 +26,6 @@ function App() {
         <Route path="/" element={<Navbars auth={auth} />}>
           <Route index element={<Home auth={auth} />}></Route>
           <Route path="/event/:id" element={<Eventedit auth={auth} />} />
-          <Route path="/exebody" element={<Exebody />}></Route>
           <Route path="/login" element={<Login setAuth={setAuth} />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/addEvent" element={<CreateEvent />}></Route>

@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgb(23, 23, 23);
+  background-color: rgb(39, 39, 39);
   color: white;
   margin-left: auto;
 }
@@ -11,22 +11,22 @@
 }
 
 hr {
-  background-color: rgb(23, 23, 23);
+  background-color: rgb(39, 39, 39);
 }
-.aboutUs_container{
+.aboutUs_container {
   padding: 5rem;
   text-align: center;
 }
-.about{
-  font-Family: "monospace";
-  font-size:large;
+.about {
+  font-family: "monospace";
+  font-size: large;
   /* auto hyphen */
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
-@media screen and (max-width:500px){
-  .Copyright p span{
-     font-size: small;
+@media screen and (max-width: 500px) {
+  .Copyright p span {
+    font-size: small;
   }
 }

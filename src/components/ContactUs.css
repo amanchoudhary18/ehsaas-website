@@ -1,6 +1,6 @@
 .contact-us {
   color: white;
-  background-color: rgb(23, 23, 23) !important;
+  background-color: rgb(39, 39, 39) !important;
 }
 
 .contact-us::placeholder {
@@ -19,16 +19,16 @@
   font-family: monospace;
 }
 
-span{
-    color: white;
-    font-weight: 600;
-    font-size: 25px ;
+span {
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
 }
-.leftHalf{
+.leftHalf {
   margin-left: 5rem;
 }
-@media screen and (max-width:500px){
-  .leftHalf{
+@media screen and (max-width: 500px) {
+  .leftHalf {
     margin-left: 3rem;
   }
 }

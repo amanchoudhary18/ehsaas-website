@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 
 import IntroLogo from "../Images/ehsaasredlogo.png";
@@ -9,6 +9,12 @@ import "./Intro.css";
 
 const Intro = () => {
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(false);
+    }, 10000);
+  }, [show]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -24,9 +30,11 @@ const Intro = () => {
         style={{ backdropFilter: "blur(20px)" }}
       >
         <ReactPlayer
+          muted={true}
           style={{ backgroundColor: "black" }}
           url={Trailer}
           playing={true}
+          playbackRate={2.0}
           controls
           width="100%"
           height="100%"

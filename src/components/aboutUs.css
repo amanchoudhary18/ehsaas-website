@@ -8,18 +8,13 @@
 }
 
 .about {
-  padding: 0 18%;
+  padding: 0;
   color: white;
   font-family: monospace;
   font-size: x-large;
-
-  /* auto hyphen */
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .about {
     font-size: large;
   }

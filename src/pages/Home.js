@@ -5,7 +5,10 @@ import Events from "../components/Events";
 import Footer from "../components/Footer";
 import Intro from "../components/Intro";
 import Videos from "../components/Videos";
-import AboutUs from "../components/aboutUs";
+import AboutUs from "../components/AboutUs";
+import ImageGallery from "../components/ImageGallery";
+import Team from "../components/Team";
+
 const Home = ({ auth }) => {
   return (
     <div>
@@ -13,6 +16,8 @@ const Home = ({ auth }) => {
       <AboutUs />
       <Events auth={auth} />
       <Videos />
+      <ImageGallery />
+      <Team />
       <ContactUs />
       <Footer />
     </div>
