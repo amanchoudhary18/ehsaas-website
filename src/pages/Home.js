@@ -8,12 +8,14 @@ import Videos from "../components/Videos";
 import AboutUs from "../components/AboutUs";
 import ImageGallery from "../components/ImageGallery";
 import Team from "../components/Team";
+import EventsConducted from "../components/EventsConducted";
 
 const Home = ({ auth }) => {
   return (
     <div>
       <Intro />
       <AboutUs />
+      <EventsConducted />
       <Events auth={auth} />
       <Videos />
       <ImageGallery />
