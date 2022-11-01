@@ -88,22 +88,38 @@ const Navbars = ({ auth }) => {
             </Nav>
 
             <Nav className="NavIcon">
-              <Nav.Link className="link" href="#deets">
+              <Nav.Link
+                className="link"
+                href="https://www.youtube.com/c/EHSAASBITMESRA"
+                target="_blank"
+              >
                 <h3>
                   <IonIcon name="logo-youtube" />
                 </h3>
               </Nav.Link>
-              <Nav.Link className="link" href="#deets">
+              <Nav.Link
+                className="link"
+                href="mailto:ehsaas@bitmesra.ac.in"
+                target="_blank"
+              >
                 <h3>
                   <IonIcon name="mail-outline" />
                 </h3>
               </Nav.Link>
-              <Nav.Link className="link" href="#deets">
+              <Nav.Link
+                className="link"
+                href="https://www.facebook.com/ehsaasbitmesra"
+                target="_blank"
+              >
                 <h3>
                   <IonIcon name="logo-facebook" />
                 </h3>
               </Nav.Link>
-              <Nav.Link className="link" href="#deets">
+              <Nav.Link
+                className="link"
+                href="https://www.instagram.com/ehsaas_bitm/"
+                target="_blank"
+              >
                 <h3>
                   <IonIcon name="logo-instagram" />
                 </h3>
