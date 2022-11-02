@@ -7,7 +7,7 @@ process.on("uncaughtException", (err) => {
   console.log(`Shutting down the server  due to  uncaught Exception `);
   process.exit(1);
 });
-const port = 4000;
+const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
   console.log(`Server is Working on  http://localhost:${port}`);
 });
