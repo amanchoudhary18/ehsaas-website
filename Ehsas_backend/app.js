@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const cookieParser = require("cookie-parser");
 const app = express();
 const userRouter = require("./route/userRoute");
@@ -20,6 +19,15 @@ app.use(function (req, res, next) {
 });
 app.use(cors());
 app.use(express.json());
+
+const path = __dirname + "/views/";
+
+app.use(express.static(path));
+
+app.get("/", function (req, res) {
+  res.sendFile(path + "index.html");
+});
+
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use("/api/v1/users", userRouter);
