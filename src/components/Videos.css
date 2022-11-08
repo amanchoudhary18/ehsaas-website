@@ -15,6 +15,22 @@ img {
   .video-playlist {
     display: none;
   }
+
+  #video {
+    padding: 7%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #video {
+    padding: 4%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #video {
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 1300px) {

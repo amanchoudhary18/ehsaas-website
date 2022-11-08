@@ -23,7 +23,7 @@ const Eventedit = () => {
         },
       });
       const response = await promise.json();
-      if (response.status == "success") {
+      if (response.status === "success") {
         const event = response.data.event[0];
         setEvent(response.data.event[0]);
         setTitle(event.name);

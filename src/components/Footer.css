@@ -25,8 +25,20 @@ hr {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+@media screen and (max-width: 700px) {
+  .copyright p {
+    font-size: 15px;
+  }
+  .copyright p span {
+    font-size: 15px;
+  }
+}
+
 @media screen and (max-width: 500px) {
-  .Copyright p span {
-    font-size: small;
+  .copyright p {
+    font-size: 10px;
+  }
+  .copyright p span {
+    font-size: 10px;
   }
 }

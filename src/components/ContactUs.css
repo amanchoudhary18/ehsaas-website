@@ -27,6 +27,7 @@ span {
 .leftHalf {
   margin-left: 5rem;
 }
+
 @media screen and (max-width: 500px) {
   .leftHalf {
     margin-left: 3rem;
